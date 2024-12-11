@@ -1,0 +1,13 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseNode@1
+  inputs:
+    version: '18.20.4'
+
+- script: |
+    npm install
+    npm run build
+    npm start
+  displayName: 'Install dependencies and start the app'
